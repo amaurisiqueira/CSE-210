@@ -7,7 +7,7 @@ class Program
     
     
     static int getdecimals(int value){
-    //Math.ceil(((f < 1.0) ? f : (f % Math.floor(f))) * 10000)        
+          
             return (value % 10);
         
     }
