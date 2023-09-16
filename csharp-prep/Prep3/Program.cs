@@ -1,9 +1,14 @@
-using System;
+﻿using System;
 
-class Program
+namespace Prep3
 {
-    static void Main(string[] args)
+    class MainClass
     {
-        Console.WriteLine("Hello Prep3 World!");
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+            string my = Console.ReadLine();
+            Console.WriteLine("Escribiste:{0}", my);
+        }
     }
 }
