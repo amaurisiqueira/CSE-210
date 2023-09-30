@@ -1,9 +1,17 @@
-using System;
+﻿using System;
 
-class Program
+namespace W03
 {
-    static void Main(string[] args)
+    class MainClass
     {
-        Console.WriteLine("Hello Develop04 World!");
+        public static void Main(string[] args)
+        {
+            MngMenu _mymenu = new MngMenu();
+            MngPrompt _mngPrompt = new MngPrompt();
+            while (_mymenu.doWhile())
+            {
+            }
+            Console.WriteLine("End of program!!!");
+        }
     }
 }
