@@ -1,14 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{12B633D3-26B1-4ABF-9804-2CA70D60CD4F}</ProjectGuid>
+    <ProjectGuid>{5B2A56B8-A95B-47D1-94FD-5C81907335E5}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>W03</RootNamespace>
-    <AssemblyName>W03</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <TargetFrameworkProfile />
+    <RootNamespace>Develop04</RootNamespace>
+    <AssemblyName>Develop04</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,21 +37,11 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MngPrompt.cs" />
-    <Compile Include="TypePrompt.cs" />
-    <Compile Include="MngMenu.cs" />
-    <Compile Include="ActionInterface.cs" />
-    <Compile Include="ActionWrite.cs" />
-    <Compile Include="ActionDisplay.cs" />
-    <Compile Include="ActionLoad.cs" />
-    <Compile Include="ActionSave.cs" />
-    <Compile Include="ActionQuit.cs" />
-    <Compile Include="TypeUserData.cs" />
-    <Compile Include="MngJornal.cs" />
+    <Compile Include="Entry.cs" />
+    <Compile Include="PromptGenerator.cs" />
+    <Compile Include="Journal.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="properties.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

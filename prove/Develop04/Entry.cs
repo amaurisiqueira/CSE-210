@@ -1,11 +1,13 @@
 ﻿using System;
-namespace W03
+namespace Develop04
 {
-    public struct TypeUserData
+    public class Entry
     {
+
         private string _date;
         private string _prompt;
         private string _message;
+
         public string Date
         {
             get
@@ -33,5 +35,6 @@ namespace W03
         }
 
 
+      
     }
 }
