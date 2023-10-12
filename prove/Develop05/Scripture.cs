@@ -10,13 +10,10 @@ namespace Develop05
         private int _n_word_total;
         List<Word> _words;
 
-        public Scripture(string book, int chapter, int verse_start, string content)
+        private void Cast_String_To_Word(string content)
         {
             _n_hiden = 0;
             _n_word_total = 0;
-            _reference = new Reference(book, chapter, verse_start, verse_start);
-            _words = new List<Word>();
-
             string[] array = content.Split(' ');
             foreach (string x in array)
             {
@@ -25,24 +22,24 @@ namespace Develop05
                 _n_word_total++;
 
             }
+
+        }
+        public Scripture(string book, int chapter, int verse_start, string content)
+        {
+          
+            _reference = new Reference(book, chapter, verse_start, verse_start);
+            _words = new List<Word>();
+            Cast_String_To_Word(content);
+
 
         }//-------------------------
 
         public Scripture(string book, int chapter, int verse_start, int verse_end, string content)
         {
-            _n_hiden = 0;
-            _n_word_total = 0;
+         
             _reference = new Reference(book, chapter, verse_start, verse_end);
             _words = new List<Word>();
-
-            string[] array = content.Split(' ');
-            foreach (string x in array)
-            {
-                Word myNew = new Word(x);
-                _words.Add(myNew);
-                _n_word_total++;
-
-            }
+            Cast_String_To_Word(content);
 
         }//-------------------
 

@@ -36,9 +36,10 @@ namespace Develop05
         public static void Main(string[] args)
         {
 
-            Random rnd = new Random();
+             
+            Random rnd = new Random(DateTime.Now.Second);
             int dificult_level = 3;
-
+             
 
             System.Collections.Generic.List<tmp_data> _myCollection = new System.Collections.Generic.List<tmp_data>
             {
@@ -50,7 +51,7 @@ namespace Develop05
 
 
             tmp_data myOption = _myCollection[rnd.Next(1, _myCollection.Count) - 1];
-            // tmp_data myOption = _myCollection[0];
+        
 
             // Console.WriteLine(myOption.book);
             Scripture myscript;
