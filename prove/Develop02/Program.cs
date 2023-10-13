@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Develop04
+namespace Develop02
 {
     class MainClass
     {

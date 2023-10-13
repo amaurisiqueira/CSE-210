@@ -3,10 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{5B2A56B8-A95B-47D1-94FD-5C81907335E5}</ProjectGuid>
+    <ProjectGuid>{4E3E9501-8A14-4CB5-A8DD-B4250407A50D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Develop04</RootNamespace>
-    <AssemblyName>Develop04</AssemblyName>
+    <RootNamespace>Develop02</RootNamespace>
+    <AssemblyName>Develop02</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -37,9 +37,9 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Journal.cs" />
     <Compile Include="Entry.cs" />
     <Compile Include="PromptGenerator.cs" />
-    <Compile Include="Journal.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

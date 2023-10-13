@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.IO;
 
-namespace Develop04
+namespace Develop02
 {
     public class Journal
     {
