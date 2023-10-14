@@ -2,9 +2,9 @@
 
 namespace Develop02
 {
-    class MainClass
+    class Program
     {
-      static   System.Collections.Generic.List<string> _myMenu = new System.Collections.Generic.List<string>
+      static   List<string> _myMenu = new List<string>
             {
                 "Write",
                 "Display",
@@ -27,7 +27,7 @@ namespace Develop02
                 Console.WriteLine($"{++n}) {mymenu}");
 
             }
-        }//-------------------------
+        } 
 
         static private int choice()
         {
@@ -48,8 +48,18 @@ namespace Develop02
 
                 tmp = tmp.Replace('\0', ' ');
                 tmp = tmp.Trim();
-                if (tmp.Length < 1 || tmp == "\0") tmp = "0";
-                int myoption = Convert.ToInt16(tmp);
+                if (tmp.Length==0 || tmp == "\0") tmp = "0";
+
+                int myoption =0;
+                try
+                {
+                    myoption =Convert.ToInt16(tmp);   
+                }catch ( Exception e)
+                {                    
+                    Console.WriteLine($"Please, type a valid number!!!!!!\nError:{e.Message}");
+                    continue;
+                }
+                 
               
              
                 if (myoption<1 || myoption > _myMenu.Count)
@@ -60,18 +70,15 @@ namespace Develop02
 
                 return myoption-1;
 
-            }//-------------------------------------------
+            } 
 
-
-        }//---- end of choice
+        } 
+        
 
         public static void Main(string[] args)
         {
 
-            Console.Clear();
-
-
-
+            Console.Clear(); 
              bool live = true;
              while (live)
             {
@@ -106,7 +113,7 @@ namespace Develop02
                 }
 
 
-            }//end while
+            }
 
             Console.WriteLine("\n\nBYE !!!!!!");
 

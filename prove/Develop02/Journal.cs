@@ -7,10 +7,11 @@ namespace Develop02
 {
     public class Journal
     {
-        private List<Entry> _entry = null;
+        private List<Entry> _entry = new List<Entry>(); 
+        PromptGenerator _generator = new PromptGenerator();
         public Journal()
         {
-            _entry = new List<Entry>(); 
+            
 
 
         }
@@ -18,15 +19,15 @@ namespace Develop02
         public void Write()
         {
 
-            PromptGenerator _generator = new PromptGenerator();
+            
 
             string _myPrompt = _generator.GetPrompt(); 
             Console.WriteLine($"{_myPrompt}");
             string _myMessage = "";
-            while (_myMessage.Length < 1)
+            while (_myMessage.Length==0)
             {
                 _myMessage = Console.ReadLine().Trim();
-                if (_myMessage.Length < 1) Console.WriteLine("Please enter a valid message. Thank you!");
+                if (_myMessage.Length==0) Console.WriteLine("Please enter a valid message. Thank you!");
 
             }
             Entry _new = new Entry();
@@ -43,7 +44,7 @@ namespace Develop02
         public void Display()
         {
 
-            if (_entry.Count < 1)
+            if (_entry.Count==0)
             {
                 Console.WriteLine("The journal is empty. Please write a journal entry.");
                 return;
@@ -55,7 +56,7 @@ namespace Develop02
 
             }
 
-        }//end  void ShowData()
+        }
 
 
 
@@ -67,11 +68,11 @@ namespace Develop02
                 w.Write(jsonString);
 
             }
-        }//end SaveFile
+        } 
 
-        private System.Collections.Generic.List<Entry> LoadFile(string myFile)
+        private List<Entry> LoadFile(string myFile)
         {
-            System.Collections.Generic.List<Entry> data = new System.Collections.Generic.List<Entry>();
+            List<Entry> data = new List<Entry>();
 
             if (File.Exists(myFile))
             {
@@ -82,47 +83,47 @@ namespace Develop02
                 }
             }
             return data;
-        }//end LoadFile
+        } 
 
 
         public void Load( )
         {
             string filename = "";
-            while (filename.Length < 2)
+            while (filename.Length==0)
             {
                 Console.Write("Enter a file name;");
                 filename = Console.ReadLine().Trim();
-                if (filename.Length < 1) Console.WriteLine("Please enter a valid file name. Thank you!");
+                if (filename.Length==0) Console.WriteLine("Please enter a valid file name. Thank you!");
 
             }
             _entry = LoadFile(filename);
              
             Console.WriteLine(" ");
             return  ;
-        }//----------------------------------------
+        } 
 
 
 
         public void Save( )
         {
-            if (_entry.Count<1)
+            if (_entry.Count==0)
             {
                 Console.WriteLine("Nothing to save!!!");
                 return  ;
             }
             string _filename = "";
-            while (_filename.Length < 2)
+            while (_filename.Length==0)
             {
                 Console.Write("Enter a file name;");
                 _filename = Console.ReadLine().Trim();
-                if (_filename.Length < 1) Console.WriteLine("Please enter a valid file name. Thank you!");
+                if (_filename.Length==0) Console.WriteLine("Please enter a valid file name. Thank you!");
 
             }
             SaveFile(_filename, _entry);
             Console.WriteLine("");
             return ;
 
-        }//------------------------------
+        } 
 
     }
 }
