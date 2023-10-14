@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Develop05
+namespace Develop03
 {
     public class Reference
     {
@@ -13,16 +13,15 @@ namespace Develop05
             _chapter = chapter;
             _verse_start = verse_start;
             _verse_end = verse_end;
-        }//------------------
-
+        }
         public string GetText()
         {
-            string _myreturn = $"{_book} {_chapter}:{_verse_start}";
-            if(_verse_end != _verse_start)
+            string tmp = $"{_book} {_chapter}:{_verse_start}";
+            if (_verse_end != _verse_start)
             {
-                _myreturn += $"-{ _verse_end}";
-            }   
-            return _myreturn;
-        }//-----------------------------
+                tmp += $"-{_verse_end}";
+            }
+            return tmp;
+        }
     }
 }
