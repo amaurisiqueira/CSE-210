@@ -3,11 +3,9 @@ namespace Develop02
 {
     public class Entry
     {
-
         private string _date;
         private string _prompt;
         private string _message;
-
         public string Date
         {
             get
@@ -23,18 +21,11 @@ namespace Develop02
         {
             get { return _prompt; }
             set { _prompt = value; }
-
         }
         public string Message
         {
-
             get { return _message; }
-
             set { _message = value; }
-
-        }
-
-
-      
+        }   
     }
 }
