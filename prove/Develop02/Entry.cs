@@ -8,14 +8,8 @@ namespace Develop02
         private string _message;
         public string Date
         {
-            get
-            {
-                return _date;
-            }
-            set
-            {
-                _date = value;
-            }
+            get { return _date;}
+            set {_date = value;}
         }
         public string Prompt
         {

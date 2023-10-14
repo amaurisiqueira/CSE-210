@@ -1,5 +1,4 @@
 ﻿using System;
-
 namespace Develop02
 {
     class Program
@@ -12,11 +11,9 @@ namespace Develop02
                 "Save",
                 "Quit"
             };
-
         static Journal _jornal = new Journal() ;
         private const int MAXMENU = 5;
         private const string WELCOME = "Welcome to the Journal Program!";
-
         static private void ListMainMenu()
         {
             Console.WriteLine(WELCOME);
@@ -28,7 +25,6 @@ namespace Develop02
 
             }
         } 
-
         static private int choice()
         {
             while (true)
@@ -44,12 +40,9 @@ namespace Develop02
                 {
                     Console.WriteLine($"Invalid format !!!{e.ToString() }");
                 }
-
-
                 tmp = tmp.Replace('\0', ' ');
                 tmp = tmp.Trim();
                 if (tmp.Length==0 || tmp == "\0") tmp = "0";
-
                 int myoption =0;
                 try
                 {
@@ -59,28 +52,19 @@ namespace Develop02
                     Console.WriteLine($"Please, type a valid number!!!!!!\nError:{e.Message}");
                     continue;
                 }
-                 
-              
-             
                 if (myoption<1 || myoption > _myMenu.Count)
                 {
                     Console.WriteLine("Please, type a valid number!!!!!!");
                     continue;
                 }
-
                 return myoption-1;
-
             } 
-
         } 
-        
-
         public static void Main(string[] args)
         {
-
             Console.Clear(); 
-             bool live = true;
-             while (live)
+            bool live = true;
+            while (live)
             {
                 ListMainMenu();
                 switch (choice()) {
@@ -109,14 +93,9 @@ namespace Develop02
                             live = false;
                             break;
                         }
-
                 }
-
-
             }
-
             Console.WriteLine("\n\nBYE !!!!!!");
-
         }
     }
 }

@@ -16,7 +16,6 @@ namespace Develop02
             {
                 myMessage = Console.ReadLine().Trim();
                 if (myMessage.Length==0) Console.WriteLine("Please enter a valid message. Thank you!");
-
             }
             Entry entry = new Entry();
             string strDate = DateTime.Now.ToString("MM/dd/yyyy");
@@ -25,7 +24,6 @@ namespace Develop02
             entry.Date = strDate;
             entries.Add(entry);
         }
-
         public void Display()
         {
             if (entries.Count==0)
