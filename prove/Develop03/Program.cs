@@ -75,11 +75,12 @@ namespace Develop03
                 using (StreamReader r = new StreamReader(myFile))
                 {
                     string json = r.ReadToEnd();
-                    Console.WriteLine(json);
+                     //    Console.WriteLine(json);
                     data = JsonConvert.DeserializeObject<List<tmp_data>>(json);
                 }
             }
             return data;
-        }
+        }//-------------------
+        
     }
 }
