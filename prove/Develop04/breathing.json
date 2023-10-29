@@ -1,0 +1,12 @@
+{
+    "activity_name":"Breathing Activity",
+    "welcome" : "Welcome to the",
+    "description": "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.",
+    "how_long_time":"How long, in seconds, would you like for your session?" ,
+    "get_ready": "Get ready...",
+    "well_done": "Well done!!",
+    "breathe_in" :"Breathe in...",
+    "breathe_out" :"Now breathe out...",
+    "you_have_completed": "You have completed another {_duration} of the Breathing Activity." 
+  
+}
