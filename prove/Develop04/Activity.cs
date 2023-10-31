@@ -1,16 +1,11 @@
-public class Activity:Json
+public class Activity : Json
 {
         protected int _duration;
         protected Log log;
-        public Activity(String file): base(file) 
+        public Activity(String file) : base(file)
         {
                 log = new Log("mylog.dat");
                 _duration = 0;
-                //  jsonInstance = new(file);
-                //   MsgWithSpinner("testing my spinner:");
-                //   Console.WriteLine("");
-                //   MsgWithCountdown("testing my countdown:");
-                //   GetDurationOfActivity();
         }
         protected void MsgWithSpinner(string msg, int time = 5, bool newline = true)
         {
@@ -51,7 +46,7 @@ public class Activity:Json
                         currentTime = DateTime.Now;
                 }
         }
-                protected int GetDurationOfActivity()
+        protected int GetDurationOfActivity()
         {
                 Console.Clear();
                 int duration = 0;
@@ -59,7 +54,7 @@ public class Activity:Json
                 Console.WriteLine("");
                 Console.WriteLine(ShowDescriptionOfActivity());
                 Console.WriteLine("");
-                Console.Write(ShowHowLongTime());
+                Console.Write(ShowHowLongTime()+" ");
                 while (true)
                 {
                         bool failure = int.TryParse(Console.ReadLine().Trim(), out duration);
@@ -67,58 +62,7 @@ public class Activity:Json
                 }
                 return duration;
         }
-        protected string ShowGetReady()
-        {
-                return  GetReady();
-        }
-        protected string ShowWellDone()
-        {
-                return GetWellDone();
-        }
-        protected string ShowWelcomeMessage()
-        {
-                return GetWelcomeMessage();
-        }
-        protected string ShowActivityName()
-        {
-                return GetActivityName();
-        }
-        protected string ShowDescriptionOfActivity()
-        {
-                return GetDescriptionOfActivity();
-        }
-        protected string ShowHowLongTime()
-        {
-                return GetHowLongTime();
-        }
-        protected string ShowMessageToPressKey()
-        {
-                return GetMessageToPressKey();
-        }
-        protected string ShowMessageNowPonderOnEach()
-        {
-                return GetMessageNowPonderOnEach();
-        }
-        protected string ShowRandomPrompt()
-        {
-                return GetRandomPrompt();
-        }
-        protected string ShowReflectPrompt()
-        {
-                return GetReflectPrompt();
-        }
-        protected string ShowBreatheIn()
-        {
-                return GetBreatheIn();
-        }
-        protected string ShowBreatheOut()
-        {
-                return GetBreatheOut();
-        }
-        protected string ShowYouHaveCompleted()
-        {
-                return GetYouHaveCompleted();
-        }
+
 }
 
 

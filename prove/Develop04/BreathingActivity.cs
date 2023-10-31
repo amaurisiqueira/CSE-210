@@ -8,6 +8,7 @@ public class BreathingActivity : Activity
     {
         _duration = GetDurationOfActivity();
         // Console.WriteLine("BreathingActivity -> duration:" + _duration);
+        Console.Clear();
         MsgWithSpinner(ShowGetReady());
         log.WriteLogActivity("--------------------------------------------------");
         log.WriteLogActivity("Start Activity " + ShowActivityName());

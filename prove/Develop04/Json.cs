@@ -15,7 +15,7 @@ public class Json
 
         }
     }
-    protected string GetReady()
+    protected string ShowGetReady()
     {
         string tmp = "";
         try
@@ -35,7 +35,7 @@ public class Json
         }
         return tmp;
     }
-    protected string GetWellDone()
+    protected string ShowWellDone()
     {
         string tmp = "";
         try
@@ -55,7 +55,7 @@ public class Json
         }
         return tmp;
     }
-    protected string GetWelcomeMessage()
+    protected string ShowWelcomeMessage()
     {
         string tmp = "";
         try
@@ -77,7 +77,7 @@ public class Json
         }
         return tmp;
     }
-    protected string GetActivityName()
+    protected string ShowActivityName()
     {
         string tmp = "";
         try
@@ -98,7 +98,7 @@ public class Json
         }
         return tmp;
     }
-    protected string GetDescriptionOfActivity()
+    protected string ShowDescriptionOfActivity()
     {
         string tmp = "";
         try
@@ -118,7 +118,7 @@ public class Json
         }
         return tmp;
     }
-    protected string GetHowLongTime()
+    protected string ShowHowLongTime()
     {
         string tmp = "";
         try
@@ -138,7 +138,7 @@ public class Json
         }
         return tmp;
     }
-    protected string GetMessageToPressKey()
+    protected string ShowMessageToPressKey()
     {
         string tmp = "";
         try
@@ -158,7 +158,7 @@ public class Json
         }
         return tmp;
     }
-    protected string GetMessageNowPonderOnEach()
+    protected string ShowMessageNowPonderOnEach()
     {
         string tmp = "";
         try
@@ -178,7 +178,7 @@ public class Json
         }
         return tmp;
     }
-    protected string GetRandomPrompt()
+    protected string ShowRandomPrompt()
     {
         string tmp = "";
         try
@@ -201,7 +201,7 @@ public class Json
         catch (System.Exception) { tmp = "Invalid key name !"; }
         return tmp;
     }
-    protected string GetReflectPrompt()
+    protected string ShowReflectPrompt()
     {
         string tmp = "";
         try
@@ -224,7 +224,7 @@ public class Json
         catch (System.Exception) { tmp = "Invalid key name !"; }
         return tmp;
     }
-    protected string GetBreatheIn()
+    protected string ShowBreatheIn()
     {
         string tmp = "";
         try
@@ -244,7 +244,7 @@ public class Json
         }
         return tmp;
     }
-    protected string GetBreatheOut()
+    protected string ShowBreatheOut()
     {
         string tmp = "";
         try
@@ -264,7 +264,7 @@ public class Json
         }
         return tmp;
     }
-    protected string GetYouHaveCompleted()
+    protected string ShowYouHaveCompleted()
     {
         string tmp = "";
         try
