@@ -4,13 +4,33 @@ public class ReflectingActivity : Activity
     {
         _duration = 0;
     }
+    protected string ShowMessageNowPonderOnEach()
+    {
+        string tmp = "";
+        try
+        {
+            if (_jsonObs.now_ponder_on_each.ToString().Length > 0)
+            {
+                tmp = _jsonObs.now_ponder_on_each.ToString();
+            };
+            if (tmp.Length == 0)
+            {
+                tmp = "The key is empty !";
+            }
+        }
+        catch (System.Exception)
+        {
+            tmp = "Invalid key name !";
+        }
+        return tmp;
+    }
     public void Play()
     {
         Random rn = new();
         _duration = GetDurationOfActivity();
-       // Console.WriteLine(" duration:" + _duration);
+        // Console.WriteLine(" duration:" + _duration);
         Console.Clear();
-        MsgWithSpinner( ShowGetReady());
+        MsgWithSpinner(ShowGetReady());
         Console.WriteLine("");
         Console.WriteLine("Consider the following prompt:");
         Console.WriteLine("");
@@ -31,12 +51,52 @@ public class ReflectingActivity : Activity
             currentTime = DateTime.Now;
         }
         Console.WriteLine("");
-        MsgWithSpinner( ShowWellDone());
+        MsgWithSpinner(ShowWellDone());
         Console.WriteLine("");
         Console.WriteLine("");
-        MsgWithSpinner(ShowYouHaveCompleted().Replace("{_duration}", _duration.ToString ()));
+        MsgWithSpinner(ShowYouHaveCompleted().Replace("{_duration}", _duration.ToString()));
     }
-
-
-
+    protected string ShowReflectPrompt()
+    {
+        string tmp = "";
+        try
+        {
+            string[] promptArray = _jsonObs.reflect_prompt.ToObject<string[]>();
+            if (promptArray.Length > 0)
+            {
+                Random rnd = new();
+                tmp = promptArray[rnd.Next(1, promptArray.Length) - 1].ToString().Trim();
+                if (tmp.Length == 0)
+                {
+                    tmp = "The key is empty !";
+                }
+            }
+            else
+            {
+                tmp = "Invalid file name !";
+            };
+        }
+        catch (System.Exception) { tmp = "Invalid key name !"; }
+        return tmp;
+    }
+    protected string ShowMessageToPressKey()
+    {
+        string tmp = "";
+        try
+        {
+            if (_jsonObs.message_to_press_key.ToString().Length > 0)
+            {
+                tmp = _jsonObs.message_to_press_key.ToString();
+            };
+            if (tmp.Length == 0)
+            {
+                tmp = "The key is empty !";
+            }
+        }
+        catch (System.Exception)
+        {
+            tmp = "Invalid key name !";
+        }
+        return tmp;
+    }
 }

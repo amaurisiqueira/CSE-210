@@ -34,13 +34,51 @@ public class BreathingActivity : Activity
         string tmp_duration = ShowYouHaveCompleted().Replace("{_duration}", _duration.ToString());
         log.WriteLogActivity(tmp_duration);
         log.WriteLogActivity("End Activity " + ShowActivityName());
-        MsgWithSpinner( ShowWellDone());
+        MsgWithSpinner(ShowWellDone());
         Console.WriteLine("");
         Console.WriteLine("");
         MsgWithSpinner(tmp_duration);
 
     }
-
-
+    protected string ShowBreatheIn()
+    {
+        string tmp = "";
+        try
+        {
+            if (_jsonObs.breathe_in.ToString().Length > 0)
+            {
+                tmp = _jsonObs.breathe_in.ToString();
+            };
+            if (tmp.Length == 0)
+            {
+                tmp = "The key is empty !";
+            }
+        }
+        catch (System.Exception)
+        {
+            tmp = "Invalid key name !";
+        }
+        return tmp;
+    }
+    protected string ShowBreatheOut()
+    {
+        string tmp = "";
+        try
+        {
+            if (_jsonObs.breathe_out.ToString().Length > 0)
+            {
+                tmp = _jsonObs.breathe_out.ToString();
+            };
+            if (tmp.Length == 0)
+            {
+                tmp = "The key is empty !";
+            }
+        }
+        catch (System.Exception)
+        {
+            tmp = "Invalid key name !";
+        }
+        return tmp;
+    }
 
 }

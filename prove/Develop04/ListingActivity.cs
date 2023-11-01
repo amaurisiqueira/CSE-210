@@ -12,7 +12,7 @@ public class ListingActivity : Activity
         // Console.WriteLine(" duration:" + _duration);
         Console.Clear();
         MsgWithSpinner(ShowGetReady());
-        string tmp_prompt = ShowRandomPrompt() ;
+        string tmp_prompt = ShowRandomPrompt();
         Console.WriteLine("");
         Console.WriteLine("List as many responses you can to the following prompt:");
         Console.WriteLine("");
@@ -48,9 +48,11 @@ public class ListingActivity : Activity
         Console.WriteLine(tmp_string_listed);
         Console.WriteLine("");
         Console.WriteLine("");
-        MsgWithSpinner( ShowWellDone());
+        MsgWithSpinner(ShowWellDone());
         Console.WriteLine("");
         Console.WriteLine("");
         MsgWithSpinner(tmp_duration);
     }
+    
+
 }

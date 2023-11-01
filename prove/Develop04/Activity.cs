@@ -1,11 +1,62 @@
-public class Activity : Json
+using Newtonsoft.Json;
+public class Activity
 {
+        protected dynamic _jsonObs;
         protected int _duration;
         protected Log log;
-        public Activity(String file) : base(file)
+        public Activity(String file)
         {
                 log = new Log("mylog.dat");
                 _duration = 0;
+                if (File.Exists(file))
+                {
+                        using (StreamReader r = new StreamReader(file))
+                        {
+                                string json = r.ReadToEnd();
+                                _jsonObs = JsonConvert.DeserializeObject(json);
+                        }
+
+                }
+        }
+        protected string ShowDescriptionOfActivity()
+        {
+                string tmp = "";
+                try
+                {
+                        if (_jsonObs.description.ToString().Length > 0)
+                        {
+                                tmp = _jsonObs.description.ToString();
+                        };
+                        if (tmp.Length == 0)
+                        {
+                                tmp = "The key is empty !";
+                        }
+                }
+                catch (System.Exception)
+                {
+                        tmp = "Invalid key name !";
+                }
+                return tmp;
+        }
+        protected string ShowHowLongTime()
+        {
+                string tmp = "";
+                try
+                {
+                        if (_jsonObs.how_long_time.ToString().Length > 0)
+                        {
+                                tmp = _jsonObs.how_long_time.ToString();
+                        };
+                        if (tmp.Length == 0)
+                        {
+                                tmp = "The key is empty !";
+                        }
+                }
+                catch (System.Exception)
+                {
+                        tmp = "Invalid key name !";
+                }
+                return tmp;
         }
         protected void MsgWithSpinner(string msg, int time = 5, bool newline = true)
         {
@@ -54,7 +105,7 @@ public class Activity : Json
                 Console.WriteLine("");
                 Console.WriteLine(ShowDescriptionOfActivity());
                 Console.WriteLine("");
-                Console.Write(ShowHowLongTime()+" ");
+                Console.Write(ShowHowLongTime() + " ");
                 while (true)
                 {
                         bool failure = int.TryParse(Console.ReadLine().Trim(), out duration);
@@ -62,7 +113,132 @@ public class Activity : Json
                 }
                 return duration;
         }
-
+        protected string ShowGetReady()
+        {
+                string tmp = "";
+                try
+                {
+                        if (_jsonObs.get_ready.ToString().Length > 0)
+                        {
+                                tmp = _jsonObs.get_ready.ToString();
+                        };
+                        if (tmp.Length == 0)
+                        {
+                                tmp = "The key is empty !";
+                        }
+                }
+                catch (System.Exception)
+                {
+                        tmp = "Invalid key name !";
+                }
+                return tmp;
+        }
+        protected string ShowWellDone()
+        {
+                string tmp = "";
+                try
+                {
+                        if (_jsonObs.well_done.ToString().Length > 0)
+                        {
+                                tmp = _jsonObs.well_done.ToString();
+                        };
+                        if (tmp.Length == 0)
+                        {
+                                tmp = "The key is empty !";
+                        }
+                }
+                catch (System.Exception)
+                {
+                        tmp = "Invalid key name !";
+                }
+                return tmp;
+        }
+        protected string ShowWelcomeMessage()
+        {
+                string tmp = "";
+                try
+                {
+                        if (_jsonObs.welcome.ToString().Length > 0 &&
+                         _jsonObs.activity_name.ToString().Length > 0
+                        )
+                        {
+                                tmp = _jsonObs.welcome.ToString() + " " + _jsonObs.activity_name.ToString();
+                        };
+                        if (tmp.Length == 0)
+                        {
+                                tmp = "The key is empty !";
+                        }
+                }
+                catch (System.Exception)
+                {
+                        tmp = "Invalid key name !";
+                }
+                return tmp;
+        }
+        protected string ShowActivityName()
+        {
+                string tmp = "";
+                try
+                {
+                        if (_jsonObs.activity_name.ToString().Length > 0
+                        )
+                        {
+                                tmp = _jsonObs.activity_name.ToString();
+                        };
+                        if (tmp.Length == 0)
+                        {
+                                tmp = "The key is empty !";
+                        }
+                }
+                catch (System.Exception)
+                {
+                        tmp = "Invalid key name !";
+                }
+                return tmp;
+        }
+        protected string ShowYouHaveCompleted()
+        {
+                string tmp = "";
+                try
+                {
+                        if (_jsonObs.you_have_completed.ToString().Length > 0)
+                        {
+                                tmp = _jsonObs.you_have_completed.ToString();
+                        };
+                        if (tmp.Length == 0)
+                        {
+                                tmp = "The key is empty !";
+                        }
+                }
+                catch (System.Exception)
+                {
+                        tmp = "Invalid key name !";
+                }
+                return tmp;
+        }
+        protected string ShowRandomPrompt()
+        {
+                string tmp = "";
+                try
+                {
+                        string[] promptArray = _jsonObs.prompt.ToObject<string[]>();
+                        if (promptArray.Length > 0)
+                        {
+                                Random rnd = new();
+                                tmp = promptArray[rnd.Next(1, promptArray.Length) - 1].ToString().Trim();
+                                if (tmp.Length == 0)
+                                {
+                                        tmp = "The key is empty !";
+                                }
+                        }
+                        else
+                        {
+                                tmp = "Invalid file name !";
+                        };
+                }
+                catch (System.Exception) { tmp = "Invalid key name !"; }
+                return tmp;
+        }
 }
 
 
