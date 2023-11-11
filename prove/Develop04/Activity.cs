@@ -74,7 +74,7 @@ public class Activity
                 while (currentTime < futureTime)
                 {
                         Console.Write(spinnner[iteration]);
-                        Thread.Sleep(500);
+                        Thread.Sleep(100);
                         Console.Write("\b \b");
                         iteration++;
                         if (iteration > 3) iteration = 0;

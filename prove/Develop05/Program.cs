@@ -3,7 +3,7 @@ class Program
 {
     static List<string> _myMenu = new List<string>
             {
-                "Create New Goal",
+               "Create New Goal" ,
                 "List Goals",
                 "Save Goals",
                 "Load Goals",
@@ -13,18 +13,19 @@ class Program
     static GlobalInformation GlobalGoals = new GlobalInformation();
 
     private const string WELCOME = "Welcome to the Journal Program!";
-    static private void ListMainMenu()
+
+    static private void ListMainMenu(List<string> mydata)
     {
         Console.WriteLine(WELCOME);
         Console.WriteLine("");
         int n = 0;
-        foreach (string mymenu in _myMenu)
+        foreach (string mymenu in mydata)
         {
             Console.WriteLine($"{++n}) {mymenu}");
 
         }
     }
-    static private int choice()
+    static private int choice(List<string> mydata)
     {
         while (true)
         {
@@ -51,7 +52,7 @@ class Program
                 Console.WriteLine($"Please, type a valid number!!!!!!\nError:{e.Message}");
                 continue;
             }
-            if (myoption < 1 || myoption > _myMenu.Count)
+            if (myoption < 1 || myoption > mydata.Count)
             {
                 Console.WriteLine("Please, type a valid number!!!!!!");
                 continue;
@@ -65,12 +66,28 @@ class Program
         bool live = true;
         while (live)
         {
-            ListMainMenu();
-            switch (choice())
+            ListMainMenu(_myMenu);
+            switch (choice(_myMenu))
             {
                 case 0:
                     {
                         // GlobalGoals.Write();
+                        List<string> _mySubMenu = new List<string>
+                        {
+                        "Simple Goal" ,
+                        "Ethernal Goal",
+                        "Check List Goal",
+                        };
+                        ListMainMenu(_mySubMenu);
+                        switch (choice(_mySubMenu))
+                        {
+                            case 0:
+                                break;
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                        }
                         break;
                     }
                 case 1:
