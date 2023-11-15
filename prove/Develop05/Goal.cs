@@ -16,19 +16,19 @@ public class Goal
         _description = description;
         _amount = amount;
     }
-    public bool IsComplete(){
+    public virtual bool IsComplete(){
             return false;
     }
-    public int RecordEvent(){
+    public virtual int RecordEvent(){
         return 0;
     }
-    public string GetStringToShow(){
+    public virtual string GetStringToShow(){
+          string ended = " ";
+        if (IsComplete()) ended = "X";
+        return $"[{ended}] {_name}({_description})";
+    }
+    public virtual string GetStringToFormated(){
         return "Nothing";
     }
-    public string GetStringToSave(){
-        return "Nothing";
-    }
-    public void LoadStringFroSaved(string parameter){
-            return ;
-    }
+   
 }
