@@ -118,17 +118,11 @@ class Program
             Console.WriteLine("Shipping label:" );
             Console.WriteLine( o.GetShippingLabel() );
             Console.WriteLine("Total price   :" + o.GetTotalPrice().ToString("#,###,###.##"));
-            /*
-            A packing label should list the name and product id of each product in the order.
+           
 
-            // Puede calcular el costo total del pedido.
-            Puede devolver una cadena para la etiqueta de embalaje.
-            Puede devolver una cadena para la etiqueta de envío.
-            El precio total se calcula como la suma de los precios de cada producto más un costo de envío único.
-            El costo de envío es de $5 si el cliente vive en EE. UU. y de $35 si no vive en EE. UU.
-            La etiqueta de embalaje debe enumerar el nombre y el ID del producto de cada producto en el pedido.
-            La etiqueta de envío debe enumerar el nombre y la dirección del cliente.
-            */
+
+
+
 
 
             //          Console.WriteLine(product1.GetProductID());
