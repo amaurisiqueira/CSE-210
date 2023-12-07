@@ -95,6 +95,21 @@ class Program
         myOrder.AddProduct(product3);
         _orders.Add(myOrder);
     }
+    static void ListAllOrder()
+    {
+        Console.WriteLine("Foundation2");
+        bool first = true;
+        foreach (Order o in _orders)
+        {
+            if (first) first = false;
+            else Console.WriteLine("---------------------------------------------");
+            Console.WriteLine("Packing  label:" );
+            Console.WriteLine(o.GetPackageLabel());
+            Console.WriteLine("Shipping label:");
+            Console.WriteLine(o.GetShippingLabel());
+            Console.WriteLine("Total price   :" + o.GetTotalPrice().ToString("#,###,###.##"));
+        }//------------
+    }
     static void Main(string[] args)
     {
         _orders.Clear();
@@ -103,34 +118,6 @@ class Program
         Populate_Order2();
         Populate_Order3();
 
-
-
-
-        Console.WriteLine("Foundation2");
-
-        bool first = true;
-        foreach (Order o in _orders)
-        {
-            if (first) first = false;
-            else Console.WriteLine("---------------------------------------------");
-
-            Console.WriteLine("Packing  label:" + o.GetPackageLabel());
-            Console.WriteLine("Shipping label:" );
-            Console.WriteLine( o.GetShippingLabel() );
-            Console.WriteLine("Total price   :" + o.GetTotalPrice().ToString("#,###,###.##"));
-           
-
-
-
-
-
-
-            //          Console.WriteLine(product1.GetProductID());
-            //        Console.WriteLine(product1.GetName());
-            //      Console.WriteLine(product1.PriceComputed());
-
-        }//------------
-
-
+        ListAllOrder();
     }
 }

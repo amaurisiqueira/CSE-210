@@ -15,11 +15,11 @@ public class Order
     {
         _products.Add(product);
     }
-    public string GetPackageLabel()
+    public string GetShippingLabel() 
     {
         return _customer.GetName() + " - " + _customer.GetFullAdress();
     }
-    public string GetShippingLabel()
+    public string GetPackageLabel()
     {
         string myReturn = "";
         bool first = true;

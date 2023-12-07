@@ -1,11 +1,9 @@
 public class Product
 {
-
     private string _product_id;
     private string _name;
     private double _price;
     private int _quantity;
-
     public Product(
     string product_id,
     string name,
